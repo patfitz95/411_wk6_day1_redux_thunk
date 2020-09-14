@@ -17,6 +17,13 @@ const cars = (state = [], action) => {
 
 const makes = (state = [], action) => {
     switch(action.type) {
+        case 'FETCH_MAKES':
+            return action.value
+        case 'DELETE_MAKE':
+            let makes = [ ...state ]
+            console.log(action.value)
+            makes.splice(action.value, 1)
+            return makes
         default:
             return state
     }
